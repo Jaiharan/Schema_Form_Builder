@@ -5,6 +5,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 3001;
@@ -69,6 +70,17 @@ const saveData = async () => {
     console.error('Error saving data:', error);
   }
 };
+
+// static path setup
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, '../../dist')));
+
+app.get('*', (_, res) => {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'));
+});
+
 
 // Routes
 app.post('/api/schemas', async (req, res) => {
