@@ -1,0 +1,125 @@
+[
+  {
+    "id": "c83c2d29-b68f-4afe-a825-f4064ddec7ed",
+    "name": "User Registration Form",
+    "schema": {
+      "type": "object",
+      "title": "User Registration Form",
+      "description": "A sample form for user registration",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "title": "First Name",
+          "description": "Enter your first name",
+          "minLength": 2,
+          "maxLength": 50
+        },
+        "lastName": {
+          "type": "string",
+          "title": "Last Name",
+          "description": "Enter your last name",
+          "minLength": 2,
+          "maxLength": 50
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "title": "Email Address",
+          "description": "Enter a valid email address"
+        },
+        "age": {
+          "type": "integer",
+          "title": "Age",
+          "description": "Enter your age",
+          "minimum": 18,
+          "maximum": 120
+        },
+        "country": {
+          "type": "string",
+          "title": "Country",
+          "description": "Select your country",
+          "enum": [
+            "United States",
+            "Canada",
+            "United Kingdom",
+            "Australia",
+            "Germany",
+            "France",
+            "Other"
+          ]
+        },
+        "newsletter": {
+          "type": "boolean",
+          "title": "Subscribe to newsletter",
+          "description": "Receive updates and news via email"
+        }
+      },
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "age"
+      ]
+    },
+    "createdAt": "2025-06-14T14:06:04.812Z"
+  },
+  {
+    "id": "10240745-e4a6-4807-af2e-58da03df4dd3",
+    "name": "sample2",
+    "schema": {
+      "$id": "https://example.com/schemas/user-registration.json",
+      "title": "User Registration",
+      "type": "object",
+      "required": [
+        "name",
+        "email",
+        "password",
+        "age",
+        "subscribe"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Full Name",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "email": {
+          "type": "string",
+          "title": "Email Address",
+          "format": "email"
+        },
+        "password": {
+          "type": "string",
+          "title": "Password",
+          "minLength": 6
+        },
+        "age": {
+          "type": "integer",
+          "title": "Age",
+          "minimum": 18,
+          "maximum": 99
+        },
+        "gender": {
+          "type": "string",
+          "title": "Gender",
+          "enum": [
+            "Male",
+            "Female",
+            "Other"
+          ]
+        },
+        "subscribe": {
+          "type": "boolean",
+          "title": "Subscribe to Newsletter?"
+        },
+        "bio": {
+          "type": "string",
+          "title": "Short Bio",
+          "maxLength": 200
+        }
+      }
+    },
+    "createdAt": "2025-06-15T06:59:18.072Z"
+  }
+]
